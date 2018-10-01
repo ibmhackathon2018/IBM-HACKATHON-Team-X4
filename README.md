@@ -1,17 +1,20 @@
 # Help me with my mood (SHADE), IBM HACKATHON 2018, by Team X4 
-
+# Video of the Solution on YouTube ("https://youtu.be/0uErPRpO_Oo")
 <details>
   <summary>Table of Contents</summary>
 
+  * [Video of the solution]
   * [Before you begin]
   * [Installation]
   * [Authentication]
     * [Getting credentials]
   * [Python version]
   * [How to run this application]
-  * [Run on Django]
 
 </details>
+
+## Video of the Solution
+* Click here("https://youtu.be/0uErPRpO_Oo")
 
 ## Before you begin
 * You need an internet connection.
