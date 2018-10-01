@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="{% static 'Problem3/favicon.ico' %}">
+        <title>IBM Hackathon (SHADE)</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <!--  CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/slider/slider.css' %}">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/owl-carousel/owl.carousel.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/owl-carousel/owl.theme.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/css/style.css' %}">
+
+        
+    </head>
+    <body>
+        
+   
+
+       
+
+
+
+
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+                        <a href="/HelpMeWithMyMood/" >
+                            <img src="{% static 'Problem3/images/logo.jpg' %}" alt="" align="middle" hspace="165">
+                        </a>
+        </header>
+        
+
+
+<!--
+==================================================
+Watson Result Section Start
+================================================== -->
+ <!-- #works -->
+<br><br><br><br><br><br>
+<section id="about">
+    <div class="container">
+            <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="text-center" data-wow-delay=".3s" data-wow-duration="500ms">
+                    <h1><br>
+                    Hi, <b>{{ username }}</b>
+                    </h1>
+                    <h2>{% if emotion != 'invalid' and result %}
+                        Your current sentiment/emotion analyzed on the basis of your recent last 24 hour tweets is : <i><b> {{ emotion }}</b></i>
+
+                        {% elif emotion == 'invalid' and result %}
+                        Not able to recognize emotion !!!!
+                        {% else %}
+                         No tweets by you in last 24 hours 
+                        {% endif %}
+                    </h2><br>
+                    <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="" data-section="#about2">See More</a>
+                    <br><br><br><br>
+                </div>
+                
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                    <img src="{% static 'Problem3/images/about/about.jpg' %}" alt="">
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+</section> 
+
+<!--
+==================================================
+Last 24 Hours Tweet made by user
+================================================== -->
+
+
+<section id="about2">
+    <div class="container">
+        <br><br><br><br><br><br>     
+                <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
+                <button class="collapsible"><font size="5">View Tweets ↓</font></button>
+                    <div class="content2">
+                        {% if result %} 
+                         <ul> <br>
+                        {% for i,j in zipped %}
+                        <li><br>֍ &nbsp
+                        <i>{{ i }}</i>
+                        &nbsp
+                        {{ j }}</li>
+                        {% endfor %}
+                        </ul>
+                         {% else %}
+                        <ul><br><li> No tweets by {{ username }} in last 24 hours 
+                        </li></ul>
+                       {% endif %}
+                       <br>
+                    </div>
+                </div>
+    </div>
+</section> 
+
+<!--
+==================================================
+Youtube content for user
+================================================== -->
+
+        <br><br><br>
+        
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">YouTube videos generated for you</h1>
+        </div>
+<div class="section-heading">
+    {% if songs %} 
+    {% for song in songs %}
+            <iframe width="460" height="260" src="{{ song }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen; padding-left: 30% ></iframe>
+    {% endfor %}
+    {% else %}
+            <ul><br><li> 
+                No music recommendation for you !!!! 
+            </li></ul>
+    {% endif %}
+        <br><br><br><br><br><br>
+            <!--
+            ==================================================
+            Back to HomePage
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                             <a href="/HelpMeWithMyMood/" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">BACK TO HOMEPAGE</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+	<!--  Javascript Files
+	================================================== -->
+	<!-- jquery -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } 
+        else {
+          content.style.display = "block";
+            }
+            });
+            }
+    </script>
+
+
+	<script src="{% static 'Problem3/plugins/jQurey/jquery.min.js' %}"></script>
+    <!-- Form Validation -->
+    <script src="{% static 'Problem3/plugins/form-validation/jquery.form.js' %}"></script> 
+    <script src="{% static 'Problem3/plugins/form-validation/jquery.validate.min.js' %}"></script>
+    <!-- owl carouserl js -->
+    <script src="{% static 'Problem3/plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'Problem3/plugins/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- wow js -->
+    <script src="{% static 'Problem3/plugins/wow-js/wow.min.js' %}"></script>
+    <!-- slider js -->
+    <script src="{% static 'Problem3/plugins/slider/slider.js' %}"></script>
+    <!-- Fancybox -->
+    <script src="{% static 'Problem3/plugins/facncybox/jquery.fancybox.js' %}"></script>
+    <!-- template main js -->
+    <script src="{% static 'Problem3/js/main.js' %}"></script>
+    </body>
+</html>

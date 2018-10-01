@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="{% static 'Problem3/favicon.ico' %}">
+        <title>IBM Hackathon</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/slider/slider.css' %}">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/owl-carousel/owl.carousel.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/owl-carousel/owl.theme.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/css/style.css' %}">
+
+        
+    </head>
+    <body>
+
+
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+       <header id="top-bar" class="navbar-fixed-top animated-header">
+           
+                
+                        <a href="/HelpMeWithMyMood/" >
+                            <img src="{% static 'Problem3/images/logo.jpg' %}" alt="" align="middle" hspace="165">
+                        </a>
+            
+        </header>
+        
+        
+
+<!--=================================
+=            404 Section            =
+==================================-->
+<section class="moduler wrapper_404">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >404</h1>
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".6s">Opps! You have entered wrong Username.</h2>
+                    <p class="wow fadeInUp animated" data-wow-delay=".9s">The tweets you are looking for is not available for <b><i>@{{ wrong }}</i></b>  or internet connection might not be available.</p>
+                    <a href="/HelpMeWithMyMood/" class="btn btn-dafault btn-home wow fadeInUp animated" data-wow-delay="1.1s">BACK TO HOMEPAGE</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container" style="height: 50%">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms"></h1>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms"></p>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+           <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> Design and Developed by <a href="#" target="_blank">TEAM X4</a>. <br> 
+                            
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="http://www.fb.com/mukulvar" class="Facebook">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.twitter.com/mukulvar" class="Twitter">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.linkedin.com/mukulvar" class="Linkedin">
+                                    <i class="ion-social-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/+MukulVar" class="Google Plus">
+                                    <i class="ion-social-googleplus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="{% static 'Problem3/plugins/jQurey/jquery.min.js' %}"></script>
+    <!-- Form Validation -->
+    <script src="{% static 'Problem3/plugins/form-validation/jquery.form.js' %}"></script> 
+    <script src="{% static 'Problem3/plugins/form-validation/jquery.validate.min.js' %}"></script>
+    <!-- owl carouserl js -->
+    <script src="{% static 'Problem3/plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'Problem3/plugins/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- wow js -->
+    <script src="{% static 'Problem3/plugins/wow-js/wow.min.js' %}"></script>
+    <!-- slider js -->
+    <script src="{% static 'Problem3/plugins/slider/slider.js' %}"></script>
+    <!-- Fancybox -->
+    <script src="{% static 'Problem3/plugins/facncybox/jquery.fancybox.js' %}"></script>
+    <!-- template main js -->
+    <script src="{% static 'Problem3/js/main.js' %}"></script>
+    </body>
+</html>

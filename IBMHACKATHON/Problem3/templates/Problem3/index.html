@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="{% static 'Problem3/favicon.ico' %}">
+        <title>IBM Hackathon (SHADE)</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <!--  CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/slider/slider.css' %}">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/owl-carousel/owl.carousel.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/owl-carousel/owl.theme.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Problem3/css/style.css' %}">
+
+        
+    </head>
+    <body>
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">         
+                        <a href="/HelpMeWithMyMood/" >
+                            <img src="{% static 'Problem3/images/logo.jpg' %}" alt="" align="middle" hspace="165">
+                        </a>
+        </header>
+        
+
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="block wow fadeInUp" data-wow-delay=".3s">
+                <!-- Slider -->
+                <section class="cd-intro">
+                    <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >
+                    <span>"HELP ME WITH MY MOOD APPLICATION (SHADE)" BY TEAM X4 </span><br>
+                    <span class="cd-words-wrapper">
+                        <b class="is-visible">IBM</b>
+                        <b>HACKATHON</b>
+                        <b>2018</b>
+                    </span>
+                    </h1>
+                    </section> <!-- cd-intro -->
+                    <!-- /.slider -->
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".6s" >
+                        This application gathers the username as an input for a particular twitter handle,<br> and then it analysis the all tweets made by the user in last 24 hour.Based on which it finds the<br> current mood/emotion of the user and used it to suggest some Youtube content that will calm down his mood or help to eliminate the negative state of mind that could affect his daily life.
+                    </h2>
+                    <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#main-slider-->
+
+<!--
+==================================================
+User Input Section
+================================================== -->
+<section id="works" class="works">
+    <div class="container">
+        <div class="section-heading">
+          <br><br><br>  <h1 class="title wow fadeInDown" data-wow-delay=".3s">Please enter the Twitter handle username</h1>
+        </div>
+
+                 <div ><form action="/HelpMeWithMyMood/" method="POST">
+                       {% csrf_token %}
+                       <div id="adjust" style="width:50%;margin:0 auto;">
+                            <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s" >
+                                <input type="text" placeholder="Enter Username" class="form-control" name="name" required id="name" style="text-align:center"  >
+                            </div>
+                        </div>
+                </div>
+
+                            
+                        <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s" align="middle">
+                                <input type="submit" id="contact-submit" class="btn btn-default btn-send "  value="Generate" >
+                            </div> 
+                </form></div>
+        
+           
+                    
+                </figure>
+                
+    </div>
+</section> <!-- #works -->
+
+
+  <!--
+            ==================================================
+            Different types of sentiments Section
+            ================================================== -->
+
+<section id="feature">
+    <div class="container"  >
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Sentiments/Emotions</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                Currently our system support following types of moods/tone.<br> These are generated or detected by using the IBM Watson API.
+            </p>
+        </div>
+        <div class="row" style="width:150%;margin:0 auto;" >
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-flask-outline"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">ANGER</h4>
+                        <p>Anger is evoked due to injustice, conflict, negligence, or betrayal. If anger is active, the individual attacks the target, verbally or physically.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-lightbulb-outline"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">JOY</h4>
+                        <p>Joy (or happiness) has shades of enjoyment, satisfaction, and pleasure. Joy brings a sense of well-being, inner peace, love, safety, and contentment.</p>
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+
+        <div class="row" style="width:150%;margin:0 auto;">
+
+        <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-flask-outline"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">SADNESS</h4>
+                        <p>Sadness indicates a feeling of loss and disadvantage. When a person is quiet, less energetic, and withdrawn, it can be inferred that they feel sadness.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-lightbulb-outline"></i>
+                        </div>
+                    </div>
+                     <div class="media-body">
+                        <h4 class="media-heading">FEAR</h4>
+                        <p>Fear is a response to impending danger. It is a survival mechanism that is triggered as a reaction to some negative stimulus.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> <!-- /#feature -->
+
+
+            <!--
+            ==================================================
+            Email Section 
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Whatever you think about this application or if you have any type of suggestions<br>or any querry just drop us a mail at <b> ibmhackathon2018@gmail.com</b></p>
+                                <a href="mailto:ibmhackathon2018@gmail.com?Subject=Hello%20again" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact Us</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> Design and Developed by <a href="#" target="_blank">TEAM X4</a>. <br> 
+                            
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="http://www.fb.com/mukulvar" class="Facebook">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.twitter.com/mukulvar" class="Twitter">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.linkedin.com/mukulvar" class="Linkedin">
+                                    <i class="ion-social-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/+MukulVar" class="Google Plus">
+                                    <i class="ion-social-googleplus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+
+	<!--  Javascript Files
+	================================================== -->
+	<!-- jquery -->
+    
+	<script src="{% static 'Problem3/plugins/jQurey/jquery.min.js' %}"></script>
+	<!-- Form Validation -->
+    <script src="{% static 'Problem3/plugins/form-validation/jquery.form.js' %}"></script> 
+    <script src="{% static 'Problem3/plugins/form-validation/jquery.validate.min.js' %}"></script>
+	<!-- owl carouserl js -->
+	<script src="{% static 'Problem3/plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+	<!-- bootstrap js -->
+	<script src="{% static 'Problem3/plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- wow js -->
+	<script src="{% static 'Problem3/plugins/wow-js/wow.min.js' %}"></script>
+	<!-- slider js -->
+	<script src="{% static 'Problem3/plugins/slider/slider.js' %}"></script>
+	<!-- Fancybox -->
+	<script src="{% static 'Problem3/plugins/facncybox/jquery.fancybox.js' %}"></script>
+	<!-- template main js -->
+	<script src="{% static 'Problem3/js/main.js' %}"></script>
+ 	</body>
+</html>
