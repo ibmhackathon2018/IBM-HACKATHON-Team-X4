@@ -42,7 +42,7 @@ To install IBM watson cloud, use `pip`:
 pip install --upgrade watson-developer-cloud
 ```
 
-To install Tweepy,use `pip`:
+To install Tweepy, use `pip`:
 ```windows
 pip install tweepy
 ```
