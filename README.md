@@ -19,12 +19,12 @@
 ## Before you begin
 * You need an internet connection.
 * You need a browser.
-* You need an Twitter's developer account
-* You need an [IBM Cloud] account.
+* You need a Twitter's developer account
+* You need an IBM Cloud account.
 
 ## Installation
 ```Windows
-To install Python visit(https://www.python.org/downloads/)
+To install Python visit("https://www.python.org/downloads/")
 
 ```
 To install Django, use `pip` :
